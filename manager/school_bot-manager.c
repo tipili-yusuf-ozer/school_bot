@@ -2,11 +2,29 @@
 #include "school_bot-manager-headers.h"
 
 struct tm cur_time;
-
+FILE* logfile;
 int main(void)
 {
+    logfile = fopen(LOG_PATH, "a");
+    if (logfile == NULL)
+    {
+        return 1;
+    }
     cur_time=get_time();
+    char tbuf[128];
+    asctime_s(tbuf, 64, &cur_time);
+    fprintf_s(logfile,"%s\n", tbuf);
+    fflush(logfile);
     load_schedule();
+    for (int n = 0; n < 9; n++)
+    {
+        for (int m = 0; m < 2; m++)
+        {
+            fprintf_s(logfile, "%s ", schedule_today[n][m]);
+        }
+    }
+    fprintf_s(logfile, "\n");
+    fflush(logfile);
     if (cur_time.tm_hour<8) //wait until start of schedule if opened early
     {
     struct tm start_time;
@@ -51,6 +69,8 @@ int main(void)
                         active_sessions[m].session_info = session_info;
                         strncpy_s(active_sessions[m].lesson_name, LESSON_NAME_MAXCHAR * sizeof(char), schedule_today[cur_time.tm_hour - 8][n], LESSON_NAME_MAXCHAR);
                         printf("started %s with pid: %d\n", active_sessions[m].lesson_name, (int) active_sessions[m].session_info.dwProcessId);
+                        fprintf_s(logfile, "started %s with pid: %d\n", active_sessions[m].lesson_name, (int)active_sessions[m].session_info.dwProcessId);
+                        fflush(logfile);
                         break;
                     }
                 }

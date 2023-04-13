@@ -7,6 +7,7 @@ const char *day_converter[]={"Mon", "Tue", "Wed", "Thu", "Fri"};
 
 void load_schedule(void)
 {
+
     for (int i = 0; i < 9; i++) 
     {
         schedule_today[i] = (char **) calloc(2, sizeof(char*));
@@ -58,10 +59,10 @@ PROCESS_INFORMATION join_session(const char *lesson)
 	ZeroMemory(&si, sizeof(si));
 	ZeroMemory(&pi, sizeof(pi));
 	si.cb=sizeof(si);
-    LPWSTR b=(wchar_t *)calloc(150, sizeof(wchar_t));
-    swprintf_s(b, 149, L"-c source ~/.bashrc; conda activate selenium; python3 %S %S", JOINER_PATH, lesson);
+    LPWSTR b=(wchar_t *)calloc(64, sizeof(wchar_t));
+    swprintf_s(b, 63, L"python %S %S", JOINER_PATH, lesson);
     if (!CreateProcess(
-        L"C:\\Windows\\System32\\bash.exe",
+        NULL,
         b,
         NULL,
         NULL,
@@ -73,6 +74,8 @@ PROCESS_INFORMATION join_session(const char *lesson)
         &pi
     ))
     {
+        fprintf_s(logfile, "failed to start session for %s", lesson);
+        fflush(logfile);
         printf("failed to start session for %s", lesson);
     }
     free(b);

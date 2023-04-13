@@ -2,15 +2,14 @@
 #include <string.h>
 #include <time.h>
 #include <windows.h>
-//#define _CRTDBG_MAP_ALLOC
 #include <stdlib.h>
-//#include <crtdbg.h>
 
 
+// WORKING_DIR "school_bot"
 
 #define SCHEDULE_FILE_PATH "schedule.csv"
-#define JOINER_PATH "joiner/linux/school_bot-joiner.py"
-#define WORKING_DIR "../" //relative to bin
+#define JOINER_PATH "joiner/school_bot-joiner.py"
+#define LOG_PATH "logs/manager_logs.txt"
 #define LESSON_NAME_MAXCHAR 16 // including null
 
 struct session
@@ -21,6 +20,7 @@ struct session
 
 extern char **schedule_today[9]; //schedule used by functions
 extern struct tm cur_time;
+extern FILE* logfile;
 //modules
 void load_schedule(void);
 PROCESS_INFORMATION join_session(const char* lesson);

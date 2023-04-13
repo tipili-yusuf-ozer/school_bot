@@ -2,6 +2,7 @@
 .vscode/
 **/test*
 **/logs*
-*.vcx*
 *.sln
 **/x64/*
+joiner/Selenium/*
+*.*proj*
