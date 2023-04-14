@@ -1,0 +1,2 @@
+../bin/school-bot-manager.exe : school-bot-manager.c school-bot-manager-modules.c school-bot-manager-helpers.c school-bot-manager-headers.h
+	gcc -g -O1 -o ../bin/school-bot-manager.exe school-bot-manager.c school-bot-manager-modules.c school-bot-manager-helpers.c school-bot-manager-headers.h

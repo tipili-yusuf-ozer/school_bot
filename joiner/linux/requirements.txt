@@ -1,0 +1,21 @@
+async-generator==1.10
+attrs @ file:///home/conda/feedstock_root/build_artifacts/attrs_1671632566681/work
+brotlipy @ file:///home/conda/feedstock_root/build_artifacts/brotlipy_1666764671472/work
+certifi==2022.12.7
+cffi @ file:///home/conda/feedstock_root/build_artifacts/cffi_1671179353105/work
+cryptography @ file:///home/conda/feedstock_root/build_artifacts/cryptography-split_1679811212387/work
+exceptiongroup @ file:///home/conda/feedstock_root/build_artifacts/exceptiongroup_1678703645500/work
+h11 @ file:///home/conda/feedstock_root/build_artifacts/h11_1664132893548/work
+idna @ file:///home/conda/feedstock_root/build_artifacts/idna_1663625384323/work
+outcome @ file:///home/conda/feedstock_root/build_artifacts/outcome_1655217710638/work
+pycparser @ file:///home/conda/feedstock_root/build_artifacts/pycparser_1636257122734/work
+pyOpenSSL @ file:///home/conda/feedstock_root/build_artifacts/pyopenssl_1680037383858/work
+PySocks @ file:///home/conda/feedstock_root/build_artifacts/pysocks_1661604839144/work
+selenium @ file:///home/conda/feedstock_root/build_artifacts/selenium_1679687315575/work
+sniffio @ file:///home/conda/feedstock_root/build_artifacts/sniffio_1662051266223/work
+sortedcontainers @ file:///home/conda/feedstock_root/build_artifacts/sortedcontainers_1621217038088/work
+trio @ file:///home/conda/feedstock_root/build_artifacts/trio_1666779970715/work
+trio-websocket @ file:///home/conda/feedstock_root/build_artifacts/trio-websocket_1679232064156/work/dist
+typing_extensions @ file:///home/conda/feedstock_root/build_artifacts/typing_extensions_1678559861143/work
+urllib3 @ file:///home/conda/feedstock_root/build_artifacts/urllib3_1678635778344/work
+wsproto @ file:///home/conda/feedstock_root/build_artifacts/wsproto_1661356345548/work
